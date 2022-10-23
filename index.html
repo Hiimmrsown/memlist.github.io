@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="baitapjavadanhsachthanhvien.css">
+</head>
+<body>
+	<tttn id="left">
+		<table border="2px solid black">
+		<tr><td>
+		<h2> Thông tin nhóm trưởng: </h2></td></tr>
+		<tr><td>
+		<img id="img" src="meo.png" width="auto" height="auto">
+		</td></tr>
+		<tr><td>
+		<h3> Họ Tên: Trương Phan Giang Sơn</h3>
+		<h3> MSSV: B1912973 </h3>
+		<h3> Trường Bách Khoa </h3>
+		<h3> Ngành Kỹ Thuật Điều Khiển và Tự động hóa </h3>
+		</td></tr></table>
+	</tttn>
+	<form id="right">
+		<h1>Vui lòng chọn thành viên để xem thông tin: </h1>
+		<select id="drop1" onclick="get_selection()">
+			<option>Zũ Minh Thuận</option>
+			<option>Nguyễn Zương Hoàng Sơn</option>
+			<option>Phan Nhật Thanh</option>
+			<option>Trương Phan Giang Sơn</option>	
+		</select>
+		<p id="p1">Thông tin của thành viên:</p>
+		<table border="2px solid black">
+		<tr>
+		<td><img id="img1" src="logo.png" width="150px" height="150px">
+		</td>
+		<td><h3 id ="p2">Họ và tên </h3>
+			<h3 id ="p3">MSSV </h3>
+			<h3 id ="p4">Trường </h3>
+			<h3 id ="p5">Ngành </h3>
+		</td>
+		</table>
+		<br>
+    <p>Số lần clicks: <a id="clicks">0</a></p>
+	</form>
+	<script type="text/javascript">
+		var clicks = 0;
+		function get_selection(){
+			clicks += 1;
+        		 document.getElementById("clicks").innerHTML = clicks;
+			i1 = document.getElementById("p1");console.log(i1);
+			i2 = document.getElementById("p2");console.log(i2);			
+			i3 = document.getElementById("p3");console.log(i3);
+			i4 = document.getElementById("p4");console.log(i4);			
+			i5 = document.getElementById("p5");console.log(i5);			
+			l1 = document.getElementById("drop1").options;
+			idx = l1.selectedIndex;
+			console.log(idx);
+			
+			if (idx == 0){
+				document.getElementById("img1").src="https://scontent.fvca1-4.fna.fbcdn.net/v/t1.6435-9/176187349_801673634080681_8458459380759053513_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=WU5jjc5irocAX9sgmIw&tn=FV-HHGUzqQqt-ws4&_nc_ht=scontent.fvca1-4.fna&oh=00_AT8Y4UBoJY9lZEi9SIUhrd_mzdWKkIwQ9bLtlGgARiNotw&oe=637316EA"
+				i1.innerHTML = "Thông tin của thành viên: "+ l1[0].innerHTML;
+				i2.innerHTML = "Vu Minh Thuan"
+				i3.innerHTML = "B1913087"
+				i4.innerHTML = "Trường Bách Khoa"
+				i5.innerHTML = "Ngành: Kỹ Thuật Điều Khiển và Tự Động hóa "
+			}else if (idx == 1){
+				document.getElementById("img1").src="NDHS.png"
+				i1.innerHTML = i1.innerHTML = "Thông tin của thành viên: "+ l1[1].innerHTML;
+				i2.innerHTML = "Nguyen Duong Hoang Son"
+				i3.innerHTML = "B1913073"
+				
+			}else if (idx == 2){
+				document.getElementById("img1").src="PNT.png"
+				i1.innerHTML = i1.innerHTML = "Thông tin của thành viên: "+ l1[2].innerHTML;
+				i2.innerHTML = "Phan Nhat Thanh"
+				i3.innerHTML = "B1913080"
+			}else{
+				document.getElementById("img1").src="meo.png"
+				i1.innerHTML = i1.innerHTML = "Thông tin của thành viên: "+ l1[3].innerHTML;
+				i2.innerHTML = "Truong Phan Giang Son"
+				i3.innerHTML = "B1912973"
+			}
+		}
+	</script>
+</body>
+</html>
